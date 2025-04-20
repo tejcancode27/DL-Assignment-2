@@ -135,8 +135,7 @@ This project fine-tunes the GPT-2 model to generate English song lyrics using th
 - **evaluate_model()**: Evaluates the model performance on the validation set.
 - **generate_song_lyrics()**: Generates song lyrics based on a given prompt using the fine-tuned GPT-2 model.
 
-## Contributing
-Feel free to fork this repository, submit issues, and create pull requests.
+
 
 
 
