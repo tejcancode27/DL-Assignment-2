@@ -72,4 +72,71 @@ This project implements a sequence-to-sequence (seq2seq) model for transliterati
 - **decode_sequence()**: Given an input sequence, this function decodes it to produce the corresponding output sequence using the trained model.
 - **load_test_data()**: Loads the test data from a file and prepares it for evaluation.
 
+# Q2
+
+This project fine-tunes the GPT-2 model to generate English song lyrics using the paultimothymooney poetry dataset. The model is trained on this dataset to predict lyrical content, and it can generate unique song lyrics based on a given prompt.
+
+## Features
+- **GPT-2 Fine-tuning**: Fine-tunes the pre-trained GPT-2 model to generate English song lyrics.
+- **Dataset**: Uses the paultimothymooney poetry dataset for training.
+- **Prompt-based Generation**: Generate song lyrics by providing a prompt to the fine-tuned model.
+- **Configurable Hyperparameters**: Allows customization of model parameters and training settings.
+
+## Requirements
+- TensorFlow 2.x
+- Huggingface Transformers
+- NumPy
+- Pandas
+
+## Installation
+1. Clone this repository.
+2. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+### 1. **Data Preprocessing**
+- The dataset is preprocessed to tokenize and encode the text into a format suitable for training GPT-2.
+- Text data is split into training and validation sets.
+
+### 2. **Model Architecture**
+- **GPT-2**: The model is based on the GPT-2 architecture, fine-tuned with a custom dataset to generate song lyrics.
+  
+### 3. **Hyperparameters**:
+- `batch_size`: Batch size for training (default: 8).
+- `epochs`: Number of training epochs (default: 3).
+- `learning_rate`: Learning rate for the optimizer (default: 5e-5).
+
+### 4. **Training the Model**:
+- Fine-tune the GPT-2 model using the following code:
+    ```python
+    trainer.train()
+    ```
+
+### 5. **Evaluating the Model**:
+- To evaluate the model on the validation set:
+    ```python
+    results = trainer.evaluate()
+    print(f"Validation Loss: {results['eval_loss']:.4f}")
+    ```
+
+### 6. **Generating Song Lyrics**:
+- Generate song lyrics using the fine-tuned model by providing a prompt:
+    ```python
+    lyrics = generate_song_lyrics(prompt="Love and dreams", model=model)
+    print(lyrics)
+    ```
+
+## Functions Used in the Code
+
+- **train_model()**: Fine-tunes the GPT-2 model on the training data.
+- **evaluate_model()**: Evaluates the model performance on the validation set.
+- **generate_song_lyrics()**: Generates song lyrics based on a given prompt using the fine-tuned GPT-2 model.
+
+## Contributing
+Feel free to fork this repository, submit issues, and create pull requests.
+
+
 
